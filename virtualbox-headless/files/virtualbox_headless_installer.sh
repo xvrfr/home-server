@@ -90,6 +90,7 @@ info ""
 
 
 warn "Uninstalling Oracle VM VirtualBox Extension Pack"
+VBoxManage list extpacks ;
 VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 
 
