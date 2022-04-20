@@ -53,11 +53,11 @@ rm -rdf virtualbox-ext-pack*
 
 if [[ $(apt-get download virt3ualbox-ext-pack) > 0 ]]; then
     error "APT download error. Exiting."
-fi
+fi ;
 
 
 # Creating temporary working directory
-mkdir -p virtualbox-ext-pack
+mkdir -p virtualbox-ext-pack ;
 
 # Unpacking metadata package
 ar vx $(ls virtualbox-ext-pack_*) --output=virtualbox-ext-pack/ ;
