@@ -49,11 +49,11 @@ rm -rdf virtualbox-ext-pack*
 #}' ;
 
 # Simplifying the above logic
-#apt-get download virtualbox-ext-pack ;
+apt-get download virtualbox-ext-pack ;
 
-if [[ $(apt-get download virt3ualbox-ext-pack) > 0 ]]; then
-    error "APT download error. Exiting."
-fi ;
+#if [[ $? > 0 ]]; then
+#    error "APT download error. Exiting."
+#fi ;
 
 
 # Creating temporary working directory
@@ -63,9 +63,9 @@ mkdir -p virtualbox-ext-pack ;
 ar vx $(ls virtualbox-ext-pack_*) --output=virtualbox-ext-pack/ ;
 tar xvf virtualbox-ext-pack/control.tar.xz -C virtualbox-ext-pack/ ;
 
-if (( $? > 0 )); then
-    error "Unpacking failed. Exiting."
-fi
+#if (( $? > 0 )); then
+#    error "Unpacking failed. Exiting."
+#fi
 
 # List of files extracted
 #ls virtualbox-ext-pack/
