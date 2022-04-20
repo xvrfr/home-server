@@ -89,7 +89,7 @@ info "Installation and cleanup completed."
 info ""
 
 
-warn "Uninstalling Oracle VM VirtualBox Extension Pack
+warn "Uninstalling Oracle VM VirtualBox Extension Pack"
 VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 
 
