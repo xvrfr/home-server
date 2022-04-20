@@ -7,10 +7,11 @@ function info { echo -e "\e[32m[info] $*\e[39m"; }
 function warn  { echo -e "\e[33m[warn] $*\e[39m"; }
 function error { echo -e "\e[31m[error] $*\e[39m"; exit 1; }
 
-command -v dpkg-de1b > /dev/null 2>&1 || MISSING_PACKAGES+=("dpkg-deb")
+command -v dpkg-deb > /dev/null 2>&1 || MISSING_PACKAGES+=("dpkg-deb")
 command -v wget > /dev/null 2>&1 || MISSING_PACKAGES+=("wget")
 command -v ar > /dev/null 2>&1 || MISSING_PACKAGES+=("binutils")
 command -v tar > /dev/null 2>&1 || MISSING_PACKAGES+=("tar")
+command -v sudo > /dev/null 2>&1 || MISSING_PACKAGES+=("sudo")
 
 if [ ! -z "${MISSING_PACKAGES}" ]; then
     warn "Are you sure you have DEBIAN-like system?"
@@ -48,7 +49,7 @@ rm -rdf virtualbox-ext-pack*
 #}' ;
 
 # Simplifying the above logic
-apt-get download virtualbox-ext-pack ;
+apt-get download virt3ualbox-ext-pack ;
 
 if (( $? > 0 )); then
     error "APT download error. Exiting."
