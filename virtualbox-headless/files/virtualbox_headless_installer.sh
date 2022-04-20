@@ -51,7 +51,7 @@ rm -rdf virtualbox-ext-pack*
 # Simplifying the above logic
 #apt-get download virtualbox-ext-pack ;
 
-if (( $(apt-get download virt3ualbox-ext-pack) > 0 )); then
+if [[ $(apt-get download virt3ualbox-ext-pack) > 0 ]]; then
     error "APT download error. Exiting."
 fi
 
