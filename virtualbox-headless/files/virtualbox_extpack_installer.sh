@@ -19,6 +19,11 @@ if [ ! -z "${MISSING_PACKAGES}" ]; then
     error "Missing: ${MISSING_PACKAGES[@]}"
 fi
 
+warn "Uninstalling Oracle VM VirtualBox Extension Pack to get latest version"
+#VBoxManage list extpacks ;
+#sleep 10 ;
+VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
+
 info ""
 info "Installing Oracle VM VirtualBox Extension Pack"
 info ""
@@ -89,9 +94,5 @@ info "Installation and cleanup completed."
 info ""
 
 
-#warn "Uninstalling Oracle VM VirtualBox Extension Pack"
-#VBoxManage list extpacks ;
-#sleep 10 ;
-#VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 
 exit 0
