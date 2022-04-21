@@ -20,6 +20,7 @@ if [ ! -z "${MISSING_PACKAGES}" ]; then
 fi
 
 warn "Uninstalling Oracle VM VirtualBox Extension Pack to get latest version"
+vboxmanage extpack cleanup
 #VBoxManage list extpacks ;
 #sleep 10 ;
 VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
