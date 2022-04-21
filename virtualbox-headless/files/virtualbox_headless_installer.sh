@@ -89,9 +89,9 @@ info "Installation and cleanup completed."
 info ""
 
 
-warn "Uninstalling Oracle VM VirtualBox Extension Pack"
-VBoxManage list extpacks ;
-sleep 10 ;
-VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
+#warn "Uninstalling Oracle VM VirtualBox Extension Pack"
+#VBoxManage list extpacks ;
+#sleep 10 ;
+#VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 
-
+exit 0
