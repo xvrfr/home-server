@@ -6,22 +6,21 @@ set -e
 # https://docs.j7k6.org/x11vnc-debian-ubuntu-linux/
 # https://help.ubuntu.com/community/VNC/Servers
 
-echo X11VNC_PASSWD=$X11VNC_PASSWD
+# Set defaults
+X11VNC_PASSWD_FILE="/etc/x11vnc.passwd"
+X11VNC_PASSWD=x11vnc
 
-X11VNC_PASSWD_DEFAULT="/etc/x11vnc.passwd"
+# Creating password file
+sudo x11vnc -storepasswd $X11VNC_PASSWD $X11VNC_PASSWD_FILE ;
+chmod 0777 $X11VNC_PASSWD_FILE
+
+
+
+
+
+# Cleanup
 X11VNC_PASSWD=
 
-X11VNC_PASSWD=$(sudo x11vnc -storepasswd /etc/x11vnc.passwd | awk -F': ' 'END{print$2}') ;
-
-echo new X11VNC_PASSWD=$X11VNC_PASSWD
-
-set_passwd ()
-{
-    X11VNC_PASSWD=$(sudo x11vnc -storepasswd /etc/x11vnc.passwd | awk -F': ' 'END{print$2}') ;
-}
-
-set_passwd ;
 
 
 
-echo X11VNC_PASSWD=$X11VNC_PASSWD
