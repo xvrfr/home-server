@@ -14,7 +14,7 @@ Description=Start x11vnc
 After=multi-user.target
 
 [Service]
-User=varnely
+User=$X11VNC_USER
 Type=simple
 ExecStart=/usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.passwd -rfbport 5900 -shared
 
