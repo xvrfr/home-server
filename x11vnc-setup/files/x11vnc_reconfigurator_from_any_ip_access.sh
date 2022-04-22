@@ -3,7 +3,7 @@ set -e
 
 
 # Set defaults
-X11VNC_USER=x11vnc3
+X11VNC_USER=x11vnc
 
 id $X11VNC_USER || ( useradd $X11VNC_USER -s /sbin/nologin && ( echo "$X11VNC_USER:$X11VNC_USER" | chpasswd ))
 
@@ -23,7 +23,6 @@ WantedBy=multi-user.target
 EOF
 
 # Re-starting service
+systemctl daemon-reload
 systemctl stop x11vnc.service
 systemctl start x11vnc.service
-systemctl daemon-reload
-
