@@ -5,7 +5,7 @@ set -e
 # Set defaults
 X11VNC_USER=x11vnc
 
-id $X11VNC_USER || adduser $X11VNC_USER -s /sbin/nologin 
+id $X11VNC_USER || adduser $X11VNC_USER --shell /sbin/nologin 
 
 # Creating service definition file for autostart on reboot
 sudo cat > /lib/systemd/system/x11vnc.service << EOF
