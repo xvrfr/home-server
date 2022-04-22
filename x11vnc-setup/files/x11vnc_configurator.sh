@@ -11,6 +11,9 @@ echo X11VNC_PASSWD=$X11VNC_PASSWD
 X11VNC_PASSWD_DEFAULT="/etc/x11vnc.passwd"
 X11VNC_PASSWD=
 
+X11VNC_PASSWD=$(sudo x11vnc -storepasswd /etc/x11vnc.passwd | awk -F': ' 'END{print$2}') ;
+
+echo new X11VNC_PASSWD=$X11VNC_PASSWD
 
 set_passwd ()
 {
