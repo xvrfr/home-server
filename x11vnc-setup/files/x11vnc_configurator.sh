@@ -15,7 +15,7 @@ info "x11vnc will go with -auth ""$X11VNC_XAUTH"""
 x11vnc -storepasswd $X11VNC_PASSWD $X11VNC_PASSWD_FILE ;
 chmod 0777 $X11VNC_PASSWD_FILE
 
-warn "Using default password! To change password use ""x11vnc -storepasswd $X11VNC_PASSWD_FILE"" command"
+warn "Using default password! To change password use \'x11vnc -storepasswd $X11VNC_PASSWD_FILE\' command"
 info "Created password file: ""$X11VNC_PASSWD_FILE"""
 
 # Creating service definition file for autostart on reboot
