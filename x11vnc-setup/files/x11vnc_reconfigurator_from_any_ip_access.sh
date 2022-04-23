@@ -13,7 +13,7 @@ info "x11vnc will go with -auth ""$X11VNC_XAUTH"""
 #id $X11VNC_USER || ( useradd $X11VNC_USER && ( echo "$X11VNC_USER:$X11VNC_USER" | chpasswd ))
 
 # Creating service definition file for autostart on reboot
-sudo cat > /lib/systemd/system/x11vnc.service << EOF
+sudo cat > /lib/systemd/system/x11vnc.service << 'EOF'
 [Unit]
 Description=Start x11vnc
 After=multi-user.target
