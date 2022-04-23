@@ -17,7 +17,7 @@ chmod 0777 $X11VNC_PASSWD_FILE
 
 warn "Using default password! To change password use:" 
 warn " "
-warm "    x11vnc -storepasswd $X11VNC_PASSWD_FILE"
+warn "    x11vnc -storepasswd $X11VNC_PASSWD_FILE"
 warn " "
 info "Created password file: ""$X11VNC_PASSWD_FILE"""
 
