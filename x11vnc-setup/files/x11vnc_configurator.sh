@@ -12,14 +12,14 @@ X11VNC_PASSWD=x11vnc
 info "x11vnc will go with -auth ""$X11VNC_XAUTH"""
 
 # Creating password file
-x11vnc -storepasswd $X11VNC_PASSWD $X11VNC_PASSWD_FILE ;
-chmod 0777 $X11VNC_PASSWD_FILE
-
 warn "Using default password! To change password use:" 
 warn " "
 warn "    x11vnc -storepasswd $X11VNC_PASSWD_FILE"
 warn " "
-info "Created password file: ""$X11VNC_PASSWD_FILE"""
+x11vnc -storepasswd $X11VNC_PASSWD $X11VNC_PASSWD_FILE ;
+chmod 0777 $X11VNC_PASSWD_FILE
+
+#info "Created password file: ""$X11VNC_PASSWD_FILE"""
 
 # Creating service definition file for autostart on reboot
 cat > /lib/systemd/system/x11vnc.service << EOF
