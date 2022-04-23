@@ -4,9 +4,19 @@ set -e
 function info { echo -e "\e[32m[info] $*\e[39m"; }
 
 # Set defaults
-X11VNC_XAUTH='$(ls /var/run/xauth/{*} 2>/dev/null || ls /var/run/sddm/{*} 2>/dev/null || echo guess )'
 X11VNC_PASSWD_FILE="/etc/x11vnc.passwd"
 #X11VNC_USER=x11vnc
+
+X11VNC_XAUTH='$('
+X11VNC_XAUTH+='xauth info 2>/dev/null | tac | xargs | grep -Po '^([^:]*:){5}[[:blank:]]+[^0]([^:]*:[[:blank:]])*\K.*'
+X11VNC_XAUTH+=' || '
+X11VNC_XAUTH+='ls /var/run/xauth/{*} 2>/dev/null'
+X11VNC_XAUTH+=' || '
+X11VNC_XAUTH+='ls /var/run/sddm/{*} 2>/dev/null'
+X11VNC_XAUTH+=' || '
+X11VNC_XAUTH+='echo guess'
+X11VNC_XAUTH+=' )'
+
 
 info "x11vnc will go with -auth ""$X11VNC_XAUTH"""
 
