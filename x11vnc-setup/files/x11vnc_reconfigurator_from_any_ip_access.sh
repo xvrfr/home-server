@@ -22,7 +22,7 @@ After=multi-user.target
 #User=$X11VNC_USER
 Type=simple
 ExecStartPre=/bin/sh -c "/bin/systemctl set-environment X11VNC_XAUTH=$X11VNC_XAUTH"
-ExecStart=/usr/bin/x11vnc -display :0 -auth $$X11VNC_XAUTH -forever -loop -noxdamage -repeat -rfbauth $X11VNC_PASSWD_FILE -rfbport 5900 -shared
+ExecStart=/usr/bin/x11vnc -display :0 -auth ${X11VNC_XAUTH} -forever -loop -noxdamage -repeat -rfbauth $X11VNC_PASSWD_FILE -rfbport 5900 -shared
 
 [Install]
 WantedBy=multi-user.target
