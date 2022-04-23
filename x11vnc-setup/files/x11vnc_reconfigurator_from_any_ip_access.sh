@@ -8,7 +8,7 @@ X11VNC_PASSWD_FILE="/etc/x11vnc.passwd"
 #X11VNC_USER=x11vnc
 
 X11VNC_XAUTH='$('
-X11VNC_XAUTH+='xauth info 2>/dev/null | tac | xargs | grep -Po ''^([^:]*:){5}[[:blank:]]+[^0]([^:]*:[[:blank:]])*\K.*'''
+X11VNC_XAUTH+="xauth info 2>/dev/null | tac | xargs | grep -Po '^([^:]*:){5}[[:blank:]]+[^0]([^:]*:[[:blank:]])*\K.*'"
 X11VNC_XAUTH+=' || '
 X11VNC_XAUTH+='ls /var/run/xauth/{*} 2>/dev/null'
 X11VNC_XAUTH+=' || '
