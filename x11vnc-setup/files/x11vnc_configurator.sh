@@ -15,7 +15,10 @@ info "x11vnc will go with -auth ""$X11VNC_XAUTH"""
 x11vnc -storepasswd $X11VNC_PASSWD $X11VNC_PASSWD_FILE ;
 chmod 0777 $X11VNC_PASSWD_FILE
 
-warn "Using default password! To change password use \'x11vnc -storepasswd $X11VNC_PASSWD_FILE\' command"
+warn "Using default password! To change password use:" 
+warn " "
+warm "    x11vnc -storepasswd $X11VNC_PASSWD_FILE"
+warn " "
 info "Created password file: ""$X11VNC_PASSWD_FILE"""
 
 # Creating service definition file for autostart on reboot
@@ -26,7 +29,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/x11vnc -display :0 -auth $X11VNC_XAUTH -forever -loop -noxdamage -repeat -localhost -rfbauth /etc/x11vnc.passwd -rfbport 5900 -shared
+ExecStart=/usr/bin/x11vnc -display :0 -auth $X11VNC_XAUTH -forever -loop -noxdamage -repeat -localhost -rfbauth $X11VNC_PASSWD_FILE -rfbport 5900 -shared
 
 [Install]
 WantedBy=multi-user.target
