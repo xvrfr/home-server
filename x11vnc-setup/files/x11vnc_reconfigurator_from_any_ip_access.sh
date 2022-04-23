@@ -5,6 +5,7 @@ function info { echo -e "\e[32m[info] $*\e[39m"; }
 
 # Set defaults
 X11VNC_XAUTH="$(ls /var/run/xauth/{*} 2>/dev/null || ls /var/run/sddm/{*} 2>/dev/null || echo guess )"
+X11VNC_PASSWD_FILE="/etc/x11vnc.passwd"
 #X11VNC_USER=x11vnc
 
 info "x11vnc will go with -auth ""$X11VNC_XAUTH"""
@@ -20,7 +21,7 @@ After=multi-user.target
 [Service]
 #User=$X11VNC_USER
 Type=simple
-ExecStart=/usr/bin/x11vnc -display :0 -auth $X11VNC_XAUTH -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.passwd -rfbport 5900 -shared
+ExecStart=/usr/bin/x11vnc -display :0 -auth $X11VNC_XAUTH -forever -loop -noxdamage -repeat -rfbauth $X11VNC_PASSWD_FILE -rfbport 5900 -shared
 
 [Install]
 WantedBy=multi-user.target
