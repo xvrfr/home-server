@@ -21,7 +21,7 @@ After=multi-user.target
 [Service]
 #User=$X11VNC_USER
 Type=simple
-ExecStart=/usr/bin/x11vnc -display :0 -auth $X11VNC_XAUTH -forever -loop -noxdamage -repeat -rfbauth $X11VNC_PASSWD_FILE -rfbport 5900 -shared
+ExecStart=/usr/bin/x11vnc -display :0 -auth "$X11VNC_XAUTH" -forever -loop -noxdamage -repeat -rfbauth $X11VNC_PASSWD_FILE -rfbport 5900 -shared
 
 [Install]
 WantedBy=multi-user.target
