@@ -5,18 +5,21 @@ set -e
 xauth list 
 
 # Rename the existing .Xauthority file by running the following command
-mv .Xauthority old.Xauthority 
+mv ~/.Xauthority ~/old.Xauthority 
 
 # xauth with complain unless ~/.Xauthority exists
 touch ~/.Xauthority
 
 # only this one key is needed for X11 over SSH 
+echo xauth gen
 xauth generate :0 . trusted 
 
 # generate our own key, xauth requires 128 bit hex encoding
+echo xauth add
 xauth add ${HOST}:0 . $(xxd -l 16 -p /dev/urandom)
 
 # To view a listing of the .Xauthority file, enter the following 
+echo xauth list
 xauth list 
 
 exit
