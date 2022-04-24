@@ -5,7 +5,7 @@
 
 [tested-01-shield]: https://img.shields.io/badge/Tested_on-Kubuntu_20.04_LTS-blue.svg
 
-Инструкция на русском языке доступна [ЗДЕСЬ: https://github.com/xvrfr/home-server/blob/main/x11vnc-setup/README_RU.MD)
+Инструкция на русском языке доступна [ЗДЕСЬ: https://github.com/xvrfr/home-server/blob/main/x11vnc-setup/README_RU.MD](https://github.com/xvrfr/home-server/blob/main/x11vnc-setup/README_RU.MD)
 
 ---
 
