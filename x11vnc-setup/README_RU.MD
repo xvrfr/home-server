@@ -60,4 +60,14 @@ sudo systemctl restart x11vnc.service
 ```
 </details></h6>
 
+---
+__Полезные ссылки:__
+- https://help.ubuntu.com/community/VNC/Servers
+- https://docs.j7k6.org/x11vnc-debian-ubuntu-linux/
+- https://c-nergy.be/blog/?p=12220
+
+
+
+
+
 
