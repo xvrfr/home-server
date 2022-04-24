@@ -25,6 +25,7 @@
 
 __Установка необходимых пакетов__
 ```Shell
+sudo apt update -y && sudo apt upgrade -y && \
 sudo apt install -y \
          net-tools \
          x11vnc \
@@ -39,19 +40,19 @@ ___* Внимание!___ _В скрипте использованы следу
 - _Путь к файлу паролей VNC:_ ___/etc/x11vnc.passwd___
 
 ___Рекомендуется сразу после завершения скрипта изменить пароль для подключения командной___
-```
+```Shell
 x11vnc -storepasswd /etc/x11vnc.passwd
 ```
 ___Настройка для туннельного подключения завершена!___
 
 _Однако, если требуется возможность подключения без создания туннеля (небезопасно), например, для доступа только из собственной (доверенной) сети, то требуются некоторые изменения:_
-```
+```Shell
 curl -sL "https://github.com/xvrfr/home-server/raw/main/x11vnc-setup/files/x11vnc_reconfigurator_from_any_ip_access.sh" | sudo ${0#-} /dev/stdin
 ```
 <h6><details><summary>Альтернативный способ включения не-туннельного доступа
 </summary>
 
-```
+```Shell
 sudo sed -i -e "s,-repeat -localhost -rfbauth,-repeat -rfbauth,g" \
          /lib/systemd/system/x11vnc.service && \
 sudo systemctl daemon-reload && \
