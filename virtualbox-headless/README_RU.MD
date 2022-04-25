@@ -36,17 +36,18 @@ sudo apt update -y && sudo apt upgrade -y && \
 sudo apt install -y \
          virtualbox ;
 ```
+_При необходимости путь к папке-хранилищу виртуальных машин может быть изменён:_
+```Shell
+sudo mkdir -p /home/_VirtualBox_VMs && \
+sudo chmod 777 /home/_VirtualBox_VMs && \
+VBoxManage setproperty machinefolder /home/_VirtualBox_VMs
+```
 __Скрипт установки пакета дополнения с автоматическим принятием лицензии__
 ```Shell
 curl -sL "https://github.com/xvrfr/home-server/raw/main/virtualbox-headless/files/virtualbox_extpack_installer.sh" | sudo ${0#-} /dev/stdin
 ```
-___* Внимание!___ _Скрипт также изменяет следующие значения по умолчанию:_
-- _Путь к папке-хранилищу виртуальных машин:_ ___/home/\_VirtualBox_VMs___
+---
 
-_При необходимости путь к папке-хранилищу виртуальных машин может быть изменён:_
-```Shell
-VBoxManage setproperty machinefolder /home/_VirtualBox_VMs
-```
 
 
 
