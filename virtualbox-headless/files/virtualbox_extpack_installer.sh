@@ -11,7 +11,7 @@ command -v dpkg-deb > /dev/null 2>&1 || MISSING_PACKAGES+=("dpkg-deb")
 command -v wget > /dev/null 2>&1 || MISSING_PACKAGES+=("wget")
 command -v ar > /dev/null 2>&1 || MISSING_PACKAGES+=("binutils")
 command -v tar > /dev/null 2>&1 || MISSING_PACKAGES+=("tar")
-command -v sudo > /dev/null 2>&1 || MISSING_PACKAGES+=("sudo")
+#command -v sudo > /dev/null 2>&1 || MISSING_PACKAGES+=("sudo")
 
 if [ ! -z "${MISSING_PACKAGES}" ]; then
     warn "Are you sure you have DEBIAN-like system?"
@@ -20,10 +20,10 @@ if [ ! -z "${MISSING_PACKAGES}" ]; then
 fi
 
 warn "Uninstalling Oracle VM VirtualBox Extension Pack to get latest version"
-sudo vboxmanage extpack cleanup
+vboxmanage extpack cleanup
 #VBoxManage list extpacks ;
 #sleep 10 ;
-sudo VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
+VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 
 info ""
 info "Installing Oracle VM VirtualBox Extension Pack"
@@ -86,7 +86,7 @@ sed -i -e "s,/usr/share/v,${str_sed}/v,g" \
 #cat virtualbox-ext-pack/postinst ;
 
 # Fire up installation
-sudo ./virtualbox-ext-pack/postinst configure ;
+./virtualbox-ext-pack/postinst configure ;
 
 # Cleanup
 cd ~
