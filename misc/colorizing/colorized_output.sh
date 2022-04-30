@@ -19,7 +19,7 @@ echo 3
 if [[ "${#__localization_dict[@]" == "0" ]] ; then
   __localization_dict=__colorized_output_str_en
 fi
-
+echo 4
 echo "Dict_length=${#__localization_dict[@]}"
 echo 5
 
