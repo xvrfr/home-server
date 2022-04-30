@@ -5,7 +5,7 @@ echo "\$#=$#"
 echo "\$1=$1"
 echo "\$0=$0"
 
-declare -A __colorized_output_en=(
+declare -A __colorized_output_str_en=(
 ["info"]="Info"
 ["warn"]="Warning"
 ["error"]="Error"
