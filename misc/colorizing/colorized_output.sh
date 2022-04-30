@@ -11,17 +11,17 @@ declare -A __colorized_output_str_en=(
   ["warn"]="Warning"
   ["error"]="Error"
 )
-
+echo 1
 __colorized_output_lng="en"
 
 declare -n __localization_dict=__colorized_output_str_$1
-
+echo 3
 if [[ "${#__localization_dict[@]" == "0" ]] ; then
   __localization_dict=__colorized_output_str_en
 fi
 
 echo "Dict_length=${#__localization_dict[@]}"
-
+echo 5
 
 #echo "${#${!'__colorized_output_str_'__colorized_output_lng}}"
 
