@@ -18,7 +18,7 @@ declare -n __localization_dict=__colorized_output_str_$1
 
 if [[ "${#__localization_dict[@]}" == "0" ]] ; then
   echo 31
-  __localization_dict=__colorized_output_str_en
+  declare -n __localization_dict=__colorized_output_str_en
   echo 32
 fi
 
