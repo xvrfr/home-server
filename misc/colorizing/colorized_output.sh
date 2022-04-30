@@ -6,9 +6,9 @@ echo "\$1=$1"
 echo "\$0=$0"
 
 declare -A __colorized_output_en=(
-["info"="Info"]
-["warn"="Warning"]
-["error"="Error"]
+["info"]="Info"
+["warn"]="Warning"
+["error"]="Error"
 )
 
 #function info { echo -e "\e[32m[info] $*\e[39m"; }
