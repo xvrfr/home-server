@@ -14,7 +14,7 @@ declare -A __colorized_output_str_en=(
 
 __colorized_output_lng="en"
 
-declare -n __localization_dict=__colorized_output_str_$1
+declare -n __localization_dict=__colorized_output_str_${1,,}
 
 if [[ "${#__localization_dict[@]}" == "0" ]] ; then
   echo 31
@@ -33,3 +33,5 @@ echo "Dict_length=${#__localization_dict[@]}"
 #function error { echo -e "\e[31m[error] $*\e[39m"; exit 1; }
 
 for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
+
+echo 99
