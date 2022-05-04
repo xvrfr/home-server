@@ -6,25 +6,38 @@ echo "\$1=$1"
 echo "\$0=$0"
 
 
-declare -A __colorized_output_str_en=(
-  ["info"]="Info"
-  ["warn"]="Warning"
-  ["error"]="Error"
-)
+function __colorized_output_localize {
 
-__colorized_output_lng="en"
+  declare -A __colorized_output_str_en=(
+    ["info"]="Info"
+    ["warn"]="Warning"
+    ["error"]="Error"
+  )
 
-declare -n __localization_dict=__colorized_output_str_${1,,}
+  declare -A __colorized_output_str_ru=(
+    ["info"]="Инфо"
+    ["warn"]="Внимание"
+    ["error"]="Ошибка"
+  )
 
-if [[ "${#__localization_dict[@]}" == "0" ]] ; then
-  echo 31
-  declare -n __localization_dict=__colorized_output_str_en
-  echo 32
-fi
+  __colorized_output_lng="en"
 
-echo "Dict_length=${#__localization_dict[@]}"
+  declare -n __localization_dict=__colorized_output_str_${2,,}
 
+  if [[ "${#__localization_dict[@]}" == "0" ]] ; then
+    declare -n __localization_dict=__colorized_output_str_${__colorized_output_lng,,}
+  fi
 
+  __localization_key = ${1,,}
+
+  if [[ "${__localization_dict[$__localization_key]}" == "" ]] ; then
+    return $1
+  else return "${__localization_dict[$__localization_key]}"
+  fi
+
+}
+
+#echo "Dict_length=${#__localization_dict[@]}"
 #echo "${#${!'__colorized_output_str_'__colorized_output_lng}}"
 
 
@@ -32,6 +45,8 @@ echo "Dict_length=${#__localization_dict[@]}"
 #function warn  { echo -e "\e[33m[warn] $*\e[39m"; }
 #function error { echo -e "\e[31m[error] $*\e[39m"; exit 1; }
 
-for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
+#for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
-echo 99
+echo 998
+
+
