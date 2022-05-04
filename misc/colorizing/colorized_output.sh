@@ -31,8 +31,8 @@ function __colorized_output_localize {
   __localization_key = ${1,,}
 
   if [[ "${__localization_dict[$__localization_key]}" == "" ]] ; then
-    return $1
-  else return "${__localization_dict[$__localization_key]}"
+    return echo "$1"
+  else return echo "${__localization_dict[$__localization_key]}"
   fi
 
 }
@@ -47,6 +47,6 @@ function __colorized_output_localize {
 
 #for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
-echo 998
+echo 997
 
 
