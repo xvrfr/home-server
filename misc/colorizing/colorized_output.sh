@@ -31,8 +31,8 @@ function __colorized_output_localize {
   __localization_key = ${1,,}
 
   if [[ "${__localization_dict[$__localization_key]}" == "" ]] ; then
-    return echo "$1"
-  else return echo "${__localization_dict[$__localization_key]}"
+    echo "$1"
+  else echo "${__localization_dict[$__localization_key]}"
   fi
 
 }
