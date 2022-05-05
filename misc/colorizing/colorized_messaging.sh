@@ -7,13 +7,12 @@ __script_baselang="en"
 
 source <(curl -sL "https://github.com/xvrfr/home-server/raw/main/misc/translate.script_template")
 __script_setlang_func="__localize_dict_$__script_basename"
-$__script_setlang_func ru
+$__script_setlang_func ${1,,}
 
 function info { echo -e "\e[32m[$(__localize_$__script_basename info)] $*\e[39m"; }
-#function warn  { echo -e "\e[33m[warn] $*\e[39m"; }
-#function error { echo -e "\e[31m[error] $*\e[39m"; exit 1; }
+function warn  { echo -e "\e[33m[$(__localize_$__script_basename warn)] $*\e[39m"; }
+function error { echo -e "\e[31m[$(__localize_$__script_basename error)] $*\e[39m"; exit 1; }
 
-#for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
-info "984"
+info "983"
 
