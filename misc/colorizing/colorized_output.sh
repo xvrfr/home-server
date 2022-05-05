@@ -48,6 +48,8 @@ function __colorized_output_localize {
 
 #for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
-echo 996
+
+__colorized_output_localize info ru
+echo 995
 
 
