@@ -1,3 +1,4 @@
+cat <<EOF
 function __localize_$__script_basename {
 
   source <(curl -sL "$__script_baseurl$__script_basename.lng")
@@ -16,3 +17,4 @@ function __localize_$__script_basename {
     echo "${__dict_$__script_basename[$__lng_key_$__script_basename]}"
   fi
 }
+EOF
