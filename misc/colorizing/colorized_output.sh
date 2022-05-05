@@ -5,6 +5,7 @@ echo "\$#=$#"
 echo "\$1=$1"
 echo "\$0=$0"
 
+source <(curl -sL "https://github.com/xvrfr/home-server/raw/main/misc/colorizing/showcolors16.sh")
 
 function __colorized_output_localize {
 
@@ -47,6 +48,6 @@ function __colorized_output_localize {
 
 #for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
-echo 997
+echo 996
 
 
