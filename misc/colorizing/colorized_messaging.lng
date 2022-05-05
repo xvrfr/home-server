@@ -1,10 +1,10 @@
 
-  declare -A __lng_en_colorized_output=(
+  declare -A __lng_en_colorized_messaging=(
     ["info"]="Info"
     ["warn"]="Warning"
     ["error"]="Error"
   )
-  declare -A __lng_ru_colorized_output=(
+  declare -A __lng_ru_colorized_messaging=(
     ["info"]="Инфо"
     ["warn"]="Внимание"
     ["error"]="Ошибка"
