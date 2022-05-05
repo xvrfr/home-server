@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+set -e
 
   declare -Ag __lng_en_colorized_messaging=(
     ["info"]="Info"
@@ -9,4 +11,4 @@
     ["warn"]="Внимание"
     ["error"]="Ошибка"
   )
-  echo 986
+  
