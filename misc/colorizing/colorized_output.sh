@@ -41,15 +41,15 @@ function __colorized_output_localize {
 #echo "Dict_length=${#__localization_dict[@]}"
 #echo "${#${!'__colorized_output_str_'__colorized_output_lng}}"
 
+__colorized_output_localize info ru
+echo 993
 
-#function info { echo -e "\e[32m[info] $*\e[39m"; }
+function info { echo -e "\e[32m[$(__colorized_output_localize info ru)] $*\e[39m"; }
 #function warn  { echo -e "\e[33m[warn] $*\e[39m"; }
 #function error { echo -e "\e[31m[error] $*\e[39m"; exit 1; }
 
 #for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
-
-__colorized_output_localize info ru
-echo 994
+info "ssddfgj"
 
 
