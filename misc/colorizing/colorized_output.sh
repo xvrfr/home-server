@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+__script_baseurl="https://github.com/xvrfr/home-server/raw/main/misc/colorizing/"
+__script_basename="colorized_output"
+__script_baselang="en"
+
 echo "\$#=$#"
 echo "\$1=$1"
 echo "\$0=$0"
@@ -9,17 +13,8 @@ echo "\$0=$0"
 
 function __colorized_output_localize {
 
-  declare -A __colorized_output_str_en=(
-    ["info"]="Info"
-    ["warn"]="Warning"
-    ["error"]="Error"
-  )
+  source <(curl -sL "$__script_baseurl$__script_basename")
 
-  declare -A __colorized_output_str_ru=(
-    ["info"]="Инфо"
-    ["warn"]="Внимание"
-    ["error"]="Ошибка"
-  )
 
   __colorized_output_lng="en"
 
@@ -51,5 +46,5 @@ function info { echo -e "\e[32m[$(__colorized_output_localize info ru)] $*\e[39m
 #for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
 info "ssddfgj"
-
+curl -sL  -H 'Cache-Control: no-cache' "https://github.com/xvrfr/home-server/raw/main/misc/translate.script_template" | cat
 
