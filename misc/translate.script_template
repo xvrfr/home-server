@@ -1,0 +1,20 @@
+function __localize_$__script_basename {
+
+  source <(curl -sL "$__script_baseurl$__script_basename")
+
+  #__lng_$__script_basename=$__script_baselang
+
+  declare -n __dict_$__script_basename=__lng_${2,,}_$__script_basename
+
+  if [[ "${#__dict_$__script_basename[@]}" == "0" ]] ; then
+    declare -n __dict_$__script_basename=__lng_${__script_baselang,,}
+  fi
+
+  __lng_key_$__script_basename="${1,,}"
+
+  if [[ "${__dict_$__script_basename[$__lng_key_$__script_basename]}" == "" ]] ; then
+    echo "$1"
+  else echo "${__dict_$__script_basename[$__lng_key_$__script_basename]}"
+  fi
+
+}
