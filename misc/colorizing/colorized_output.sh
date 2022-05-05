@@ -6,8 +6,9 @@ __script_basename="colorized_output"
 __script_baselang="en"
 
 curl -sL  -H 'Cache-Control: no-cache' "https://github.com/xvrfr/home-server/raw/main/misc/translate.script_template" | \
-cat | xargs
+envsubst | cat
 
+echo 992
 
 
 echo "\$#=$#"
@@ -42,7 +43,6 @@ function __colorized_output_localize {
 #echo "${#${!'__colorized_output_str_'__colorized_output_lng}}"
 
 __colorized_output_localize info ru
-echo 993
 
 function info { echo -e "\e[32m[$(__colorized_output_localize info ru)] $*\e[39m"; }
 #function warn  { echo -e "\e[33m[warn] $*\e[39m"; }
