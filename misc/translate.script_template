@@ -1,7 +1,7 @@
 source <(cat <<EOF 
 
 #!/usr/bin/env bash
-set -e
+#set -e
 
 # Templated translation function
 function __localize_dict_$__script_basename {
