@@ -6,7 +6,7 @@ __script_basename="colorized_output"
 __script_baselang="en"
 
 curl -sL  -H 'Cache-Control: no-cache' "https://github.com/xvrfr/home-server/raw/main/misc/translate.script_template" | \
-xargs | cat
+cat | xargs
 
 
 
@@ -50,5 +50,5 @@ function info { echo -e "\e[32m[$(__colorized_output_localize info ru)] $*\e[39m
 
 #for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
-info "990"
+info "989"
 
