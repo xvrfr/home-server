@@ -12,7 +12,6 @@ function __localize_dict_$__script_basename {
   if [[ "\${#__dict_$__script_basename[@]}" == "0" ]] ; then
     declare -n __dict_$__script_basename=__lng_${__script_baselang}_$__script_basename
   fi
-  echo "dict_len=\${#__dict_$__script_basename[@]}" 
 }
 
 
