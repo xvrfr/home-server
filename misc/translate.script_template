@@ -1,4 +1,4 @@
-(source) < cat <<EOF
+cat <<EOF | source
 # Templated translation function
 function __localize_$__script_basename {
   
