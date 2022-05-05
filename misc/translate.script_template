@@ -1,4 +1,4 @@
-cat <<EOF
+#cat <<EOF
 # Templated translation function
 function __localize_$__script_basename {
   
@@ -19,5 +19,5 @@ function __localize_$__script_basename {
     echo "\${__dict_$__script_basename[\${1,,}]}"
   fi
 }
-EOF
-__localize_colorized_output info ru
+#EOF
+#__localize_colorized_output info ru
