@@ -1,6 +1,6 @@
 cat <<EOF
 function __localize_$__script_basename {
-
+  echo 666
   source <(curl -sL "$__script_baseurl$__script_basename.lng")
 
   declare -n __dict_$__script_basename=__lng_${2,,}_$__script_basename
@@ -18,3 +18,5 @@ function __localize_$__script_basename {
   fi
 }
 EOF
+
+__localize_colorized_output info ru
