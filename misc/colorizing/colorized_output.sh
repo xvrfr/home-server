@@ -5,7 +5,7 @@ echo "\$#=$#"
 echo "\$1=$1"
 echo "\$0=$0"
 
-source <(curl -sL "https://github.com/xvrfr/home-server/raw/main/misc/colorizing/showcolors16.sh")
+#source <(curl -sL "https://github.com/xvrfr/home-server/raw/main/misc/colorizing/showcolors16.sh")
 
 function __colorized_output_localize {
 
@@ -29,7 +29,7 @@ function __colorized_output_localize {
     declare -n __localization_dict=__colorized_output_str_${__colorized_output_lng,,}
   fi
 
-  __localization_key = ${1,,}
+  __localization_key="${1,,}"
 
   if [[ "${__localization_dict[$__localization_key]}" == "" ]] ; then
     echo "$1"
@@ -50,6 +50,6 @@ function __colorized_output_localize {
 
 
 __colorized_output_localize info ru
-echo 995
+echo 994
 
 
