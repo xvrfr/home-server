@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+#set -e
 
 __script_baseurl="https://github.com/xvrfr/home-server/raw/main/misc/colorizing/"
 __script_basename="colorized_messaging"
@@ -15,5 +15,5 @@ function info { echo -e "\e[32m[$(__localize_$__script_basename info)] $*\e[39m"
 
 #for sound in "${!__localization_dict[@]}"; do echo "$sound - ${__localization_dict[$sound]}"; done
 
-info "988"
+info "985"
 
