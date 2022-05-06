@@ -2,7 +2,7 @@
 #set -e
 
 # Flush dictionary
-declare -Ag $1
+declare -Ag $1='()';
 
 case "${2,,}" in
   "ru")
