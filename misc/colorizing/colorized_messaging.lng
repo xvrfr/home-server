@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 #set -e
 
+# Flush dictionary
+declare -Ag $1
+
 case "${2,,}" in
   "ru")
     declare -Ag $1='(
