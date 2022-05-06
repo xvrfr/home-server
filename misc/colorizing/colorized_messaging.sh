@@ -14,5 +14,3 @@ function warn  { echo -e "\e[33m[$(__localize_$__script_basename warn)] $*\e[39m
 function error { echo -e "\e[31m[$(__localize_$__script_basename error)] $*\e[39m"; exit 1; }
 
 
-info "983"
-
