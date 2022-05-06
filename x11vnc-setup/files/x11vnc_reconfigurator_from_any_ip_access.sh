@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-function info { echo -e "\e[32m[info] $*\e[39m"; }
+source <(curl -sL "https://github.com/xvrfr/home-server/raw/main/misc/colorizing/colorized_messaging.sh") en
 
 # Set defaults
 X11VNC_PASSWD_FILE="/etc/x11vnc.passwd"
