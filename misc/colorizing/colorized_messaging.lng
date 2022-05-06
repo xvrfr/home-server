@@ -1,14 +1,22 @@
 #!/usr/bin/env bash
 #set -e
 
-  declare -Ag __lng_en_colorized_messaging=(
-    ["info"]="Info"
-    ["warn"]="Warning"
-    ["error"]="Error"
-  )
-  declare -Ag __lng_ru_colorized_messaging=(
-    ["info"]="Инфо"
-    ["warn"]="Внимание"
-    ["error"]="Ошибка"
-  )
+case "${2,,}" in
+  "ru")
+    declare -Ag ${1}=(
+      ["info"]="Инфо"
+      ["warn"]="Внимание"
+      ["error"]="Ошибка"
+    )
+  ;;
+
+  "en")
+    declare -Ag ${1}=(
+      ["info"]="Info"
+      ["warn"]="Warning"
+      ["error"]="Error"
+    )
+  ;;
+esac
+    
   
