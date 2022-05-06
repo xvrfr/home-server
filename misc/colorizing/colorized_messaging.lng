@@ -5,7 +5,7 @@ echo $*
 
 case "${2,,}" in
   "ru")
-    declare -Ag $1=(
+    declare -Ag dddd=(
       ["info"]="Инфо"
       ["warn"]="Внимание"
       ["error"]="Ошибка"
