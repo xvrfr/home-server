@@ -6,16 +6,12 @@ source <(cat <<EOF
 # Templated translation function
 function __localize_dict_$__script_basename {
   
-  # Sourcing translation dictionaries
+  # Sourcing translation dictionary
+  # Probing provided parameters for translation dictionary
   source <(curl -sL "$__script_baseurl$__script_basename.lng") __dict_$__script_basename \${1,,}
 
-  # Probing provided parameters for translation dictionary
-  #declare -gn __dict_$__script_basename=__lng_\${1,,}_$__script_basename
-
   if [[ "\${#__dict_$__script_basename[@]}" == "0" ]] ; then
-    #declare -gn __dict_$__script_basename=__lng_${__script_baselang}_$__script_basename
     source <(curl -sL "$__script_baseurl$__script_basename.lng") __dict_$__script_basename ${__script_baselang,,}
-
   fi
 }
 
