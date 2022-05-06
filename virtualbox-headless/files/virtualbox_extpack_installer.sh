@@ -3,9 +3,7 @@ set -e
 
 declare -a MISSING_PACKAGES
 
-function info { echo -e "\e[32m[info] $*\e[39m"; }
-function warn  { echo -e "\e[33m[warn] $*\e[39m"; }
-function error { echo -e "\e[31m[error] $*\e[39m"; exit 1; }
+source <(curl -sL "https://github.com/xvrfr/home-server/raw/main/misc/colorizing/colorized_messaging.sh") en
 
 command -v dpkg-deb > /dev/null 2>&1 || MISSING_PACKAGES+=("dpkg-deb")
 command -v wget > /dev/null 2>&1 || MISSING_PACKAGES+=("wget")
