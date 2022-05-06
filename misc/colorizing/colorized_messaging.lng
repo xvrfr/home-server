@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #set -e
 
+echo $*
+
 case "${2,,}" in
   "ru")
     declare -Ag $1=(
