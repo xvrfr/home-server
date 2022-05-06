@@ -1,23 +1,21 @@
 #!/usr/bin/env bash
 #set -e
 
-echo $*
-
 case "${2,,}" in
   "ru")
-    declare -Ag $1=$(
+    declare -Ag $1='(
       ["info"]="Инфо"
       ["warn"]="Внимание"
       ["error"]="Ошибка"
-    )
+    )'
   ;;
 
   "en")
-    declare -Ag $1=$(
+    declare -Ag $1='(
       ["info"]="Info"
       ["warn"]="Warning"
       ["error"]="Error"
-    )
+    )'
   ;;
 esac
     
